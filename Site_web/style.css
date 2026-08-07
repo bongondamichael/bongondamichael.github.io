@@ -1,0 +1,242 @@
+/* -------------------- RESET & BASE -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    padding-top: 80px; /* Évite que le menu fixe cache le contenu */
+}
+
+/* -------------------- BARRE DE NAVIGATION (fixe en haut) -------------------- */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.site-nav {
+    background-color: #0f172a; /* Bleu nuit profond */
+    padding: 10px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #e94560; /* Une touche de couleur */
+}
+
+.nav-conteneur {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* --- LOGO --- */
+.site-logo img {
+    display: block;
+    height: 45px;
+    width: auto;
+}
+
+/* --- MENU DES LIENS (version grand écran) --- */
+.site-menu {
+    display: flex;
+    list-style: none;
+    gap: 6px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.site-menu li a {
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.site-menu li a:hover {
+    background-color: #e94560;
+    color: #ffffff;
+}
+
+/* --- BOUTON HAMBURGER (caché sur grand écran) --- */
+.hamburger-btn {
+    display: none; /* On ne le voit pas sur desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #f8fafc;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+
+
+/* ==================== FOOTER ==================== */
+.site-footer {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    margin-top: 60px;
+    border-top: 3px solid #e94560;
+}
+
+.footer-conteneur {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 30px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 160px;
+}
+
+.footer-brand {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.footer-desc {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #e94560;
+    margin-bottom: 12px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links li {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.footer-links li a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links li a:hover {
+    color: #e94560;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    text-align: center;
+    padding: 16px 20px;
+}
+
+.footer-bottom p {
+    color: #475569;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* -------------------- RESPONSIVE (Mobile & Tablettes) -------------------- */
+@media screen and (max-width: 768px) {
+
+    body {
+        padding-top: 70px;
+    }
+
+    /* --- On fait apparaître le hamburger --- */
+    .hamburger-btn {
+        display: flex;
+    }
+
+    /* --- On cache le menu par défaut sur mobile --- */
+    .site-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 0 10px 0;
+        gap: 4px;
+        border-top: 1px solid #334155;
+        margin-top: 16px;
+        background-color: #0f172a;
+    }
+
+    .site-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .site-menu li a {
+        display: block;
+        padding: 14px 0;
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    /*
+       Cette classe '.nav-ouvert' est ajoutée/supprimée par le JavaScript
+       quand on clique sur le hamburger.
+    */
+    .site-menu.nav-ouvert {
+        display: flex !important;
+    }
+
+    /* --- La grille passe en colonne unique --- */
+    .site-main {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .author-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .footer-conteneur {
+        flex-direction: column;
+        gap: 24px;
+        padding: 30px 20px 20px;
+    }
+}
