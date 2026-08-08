@@ -55,6 +55,7 @@
             justify-content: space-between;
             padding: 18px clamp(20px, 5vw, 64px);
             background: rgba(5, 7, 13, 0.75);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--line);
         }
@@ -273,7 +274,7 @@
         #chapitres > div > div > div:nth-child(2) span:last-child { color: var(--blue-bright); border-color: var(--blue-dim); }
         #chapitres > div > div > div:nth-child(2) span:last-child::before { background: var(--blue-bright); box-shadow: 0 0 0 3px rgba(111,168,255,0.18); animation: pulse 2s infinite; }
 
-        /* CH.2 — FETI APP : en pause, ambre */
+        /* CH.2 — Developer Insights (le blog) : en pause, ambre */
         #chapitres > div > div > div:nth-child(3) span:last-child { color: #f2b263; }
         #chapitres > div > div > div:nth-child(3) span:last-child::before { background: #f2b263; }
 
@@ -299,6 +300,13 @@
         }
 
         /* ---------- Logs ---------- */
+
+        #logs > div {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
         #logs > p { color: var(--text-mid); max-width: 56ch; margin-bottom: 40px; }
 
         article {
@@ -347,12 +355,31 @@
             font-style: italic;
         }
 
-        article > p:last-child {
+        article > div:nth-child(3) ul {
+            list-style: none;
+            margin: 4px 0 16px;
+        }
+
+        article > div:nth-child(3) li {
+            position: relative;
+            padding-left: 22px;
+        }
+        
+        article > div:nth-child(3) li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--blue-bright);
+        }
+
+        .moi {
             margin-top: 20px;
             font-family: var(--mono);
             font-size: 13px;
             color: var(--blue-bright);
         }
+
+        img {max-width: 100%; height: auto; border-radius: 8px; }
 
         /* ---------- Footer ---------- */
         footer {
@@ -406,9 +433,23 @@
         }
 
         @media (max-width: 640px) {
-            header { flex-direction: column; gap: 14px; }
-            nav ul { flex-wrap: wrap; justify-content: center; }
-            section { padding: 64px 0; }
+            header {
+                padding: 14px clamp(20px, 5vw, 32px);
+                flex-direction: column;
+                gap: 14px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                overflow-x: auto;
+            }
+            
+            footer ul {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            section { padding: 64px 0; scroll-margin-top: 64px; }
         }
     </style>
 </head>
@@ -492,6 +533,27 @@
             <div>
                 <article>
                     <div>
+                        <span>LOG #1 — Le jour où j'ai chopé Claude en flagrant délit 😅</span>
+                        <span>Kinshasa, RDC</span>
+                        <span>Anecdote et le vrai sujet</span>
+                    </div>
+                    <h3>Le vrai sujet : pourquoi les bases comptent encore en 2026</h3>
+                    <div>
+                        <p>Petite anecdote avant le vrai sujet. Je suis en train de refaire le HTML du site officiel à la main — no AI, juste moi et mes balises. Je renvoie mon fichier à Claude pour review, il me corrige (à raison), et il me sort une règle du genre : un span ne remplace jamais un titre de section. Sauf que... son propre fichier avait "// Manifeste" dans un span. 👀 Je lui fais remarquer. Et honnêtement, au lieu de sortir une excuse, il a juste dit "bon point, j'aurais dû faire autrement." Pas de "mais en fait techniquement...". Juste une reconnaissance directe.</p>
+                        <p>Ça m'a marqué parce que ça résume où on en est en 2026 : l'IA peut te générer un site entier en 30 secondes, mais si tu connais pas les bases, tu peux même pas repérer quand elle se plante. Moi je l'ai chopé parce que je venais littéralement d'apprendre la règle deux messages plus tôt.</p>
+                        <p>Soyons honnêtes, en 2026, coder tout le HTML et le CSS à la main sur un petit projet perso, c'est de moins en moins réaliste. L'IA le fait plus vite, souvent correctement. Je le vis au quotidien. Mais les bases restent non-négociables. Pas pour le plaisir de souffrir un peu en apprenant, mais parce que :</p>
+                        <ul>
+                            <li>Tu peux pas juger un code que tu comprends pas</li>
+                            <li>L'IA optimise pour "ça marche", pas pour "c'est propre", sans base tu le vois jamais</li>
+                            <li>Le jour où tu dois déboguer ou comprendre ce qui se passe sous le capot, la vitesse de l'IA te sauve plus</li>
+                        </ul>
+                        <p>Le vrai skill en 2026, c'est pas "je sais taper chaque ligne à la main". C'est "je sais juger chaque ligne qu'on me donne." La suite : on continue à documenter chaque étape, un log à la fois.</p>
+                    </div>
+                    <p class="moi">— Michaël</p><br>
+                    <img src="images/log1.jpg" alt="Capture de la première version du site officiel de Developer Insights, avec le texte '// Manifeste' dans un span au lieu d'un titre de section.">
+                </article>
+                <article>
+                    <div>
                         <span>LOG #0</span>
                         <span>Kinshasa, RDC</span>
                         <span>Chapitre 0 — Genèse</span>
@@ -505,7 +567,7 @@
                         <p>Pourquoi ? Parce que je n'ai jamais vu quelqu'un qui construit depuis Kinshasa raconter ça en direct. Les success stories africaines qu'on nous montre arrivent toujours finies, jamais en cours. Je veux logger le <em>en cours</em>.</p>
                         <p>Ce log #0, c'est le point de départ. Tout ce qui suit — chapitres, logs, victoires, abandons — part d'ici.</p>
                     </div>
-                    <p>— Michaël</p>
+                    <p class="moi">— Michaël</p>
                 </article>
             </div>
         </section>
