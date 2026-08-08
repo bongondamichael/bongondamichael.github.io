@@ -434,22 +434,39 @@
 
         @media (max-width: 640px) {
             header {
-                padding: 14px clamp(20px, 5vw, 32px);
-                flex-direction: column;
+                padding: 14px 20px;
                 gap: 14px;
             }
+
+            header > div:first-child { font-size: 13px; flex-shrink: 0; }
+
+            nav { min-width: 0; overflow: hidden; }
+
             nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-wrap: nowrap;
                 overflow-x: auto;
-            }
-            
-            footer ul {
-                flex-direction: column;
-                gap: 30px;
+                gap: 6px;
             }
 
-            section { padding: 64px 0; scroll-margin-top: 64px; }
+            nav a {
+                padding: 7px 11px;
+                font-size: 11px;
+                white-space: nowrap;
+            }
+
+            section { padding: 64px 0; scroll-margin-top: 76px; }
+
+            footer ul {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            footer ul a {
+                display: block;
+                text-align: center;
+                padding: 14px 20px;
+            }
         }
     </style>
 </head>
