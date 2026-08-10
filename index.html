@@ -10,34 +10,34 @@
     <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-    <header>
-        <div>DEVELOPER<span>_</span>INSIGHTS</div>
-        <nav>
-            <ul>
-                <li><a href="#manifeste">Manifeste</a></li>
-                <li><a href="#chapitres">Chapitres</a></li>
-                <li><a href="#logs">Logs</a></li>
+    <header class="site-header">
+        <div class="brand">DEVELOPER<span>_</span>INSIGHTS</div>
+        <nav class="site-nav">
+            <ul class="nav-list">
+                <li><a class="nav-link" href="#manifeste">Manifeste</a></li>
+                <li><a class="nav-link" href="#chapitres">Chapitres</a></li>
+                <li><a class="nav-link" href="#logs">Logs</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="manifeste">
-            <span>// Manifeste</span>
-            <h1>On ne code pas pour coder. <span>On construit pour que ça reste.</span></h1>
+        <section id="manifeste" class="content-section manifesto">
+            <span class="section-label">// Manifeste</span>
+            <h1 class="section-title">On ne code pas pour coder. <span>On construit pour que ça reste.</span></h1>
             <div>
-                <ol>
-                    <li>On documente <strong>tout</strong>, même les échecs. Un bug réglé à 2h du matin vaut autant de place ici qu'un lancement réussi.</li>
-                    <li>On construit <strong>pour l'Afrique</strong>, pas pour impressionner qui que ce soit ailleurs.</li>
-                    <li>Le code est un écrit, pas une identité. On préfère <strong>bâtir</strong> que se spécialiser dans une seule case.</li>
-                    <li>Rien ne sort parfait d'ici. Tout sort <strong>honnête</strong>.</li>
-                    <li>Un projet abandonné n'est pas un échec fermé — c'est un log qui a nourri le suivant.</li>
+                <ol class="manifesto-list">
+                    <li class="manifesto-item">On documente <strong>tout</strong>, même les échecs. Un bug réglé à 2h du matin vaut autant de place ici qu'un lancement réussi.</li>
+                    <li class="manifesto-item">On construit <strong>pour l'Afrique</strong>, pas pour impressionner qui que ce soit ailleurs.</li>
+                    <li class="manifesto-item">Le code est un écrit, pas une identité. On préfère <strong>bâtir</strong> que se spécialiser dans une seule case.</li>
+                    <li class="manifesto-item">Rien ne sort parfait d'ici. Tout sort <strong>honnête</strong>.</li>
+                    <li class="manifesto-item">Un projet abandonné n'est pas un échec fermé — c'est un log qui a nourri le suivant.</li>
                 </ol>
             </div>
         </section>
-        <section id="chapitres">
-            <div>
-                <span>// Chapitres</span>
-                <h2>Les arcs en cours</h2>
+        <section id="chapitres" class="content-section chapters">
+            <div class="section-inner">
+                <span class="section-label">// Chapitres</span>
+                <h2 class="section-title">Les arcs en cours</h2>
                 <p>Chaque chapitre regroupe les logs d'un même projet — pour suivre une histoire complète, pas des posts épars.</p>
                 <svg class="signal-divider" viewBox="0 0 400 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M10 45 C 90 45, 150 45, 220 20" stroke="#2f7dff" stroke-width="2" stroke-linecap="round"/>
@@ -46,124 +46,186 @@
                     <rect x="262" y="20" width="10" height="28" rx="1.5" fill="#1c2740"/>
                     <rect x="279" y="8" width="10" height="40" rx="1.5" fill="#2f7dff"/>
                 </svg>
-                <div>
-                    <div>
-                        <span>CH.0</span>
-                        <div>
+                <div class="chapter-grid">
+                    <div class="chapter-card">
+                        <span class="chapter-id">CH.0</span>
+                        <div class="chapter-info">
                             <h3>Genèse</h3>
                             <p>Le point de départ — pourquoi Developer Insights existe.</p>
                         </div>
-                        <span>Log fondateur</span>
+                        <span class="chapter-status status-neutral">Log fondateur</span>
                     </div>
-                    <div>
-                        <span>CH.1</span>
-                        <div>
+                    <div class="chapter-card">
+                        <span class="chapter-id">CH.1</span>
+                        <div class="chapter-info">
                             <h3>Developer Insights (le site)</h3>
                             <p>Le Journal de bord officiel de Developer Insights.</p>
                         </div>
-                        <span>En cours</span>
+                        <span class="chapter-status status-live">En cours</span>
                     </div>
-                    <div>
-                        <span>CH.2</span>
-                        <div>
+                    <div class="chapter-card">
+                        <span class="chapter-id">CH.2</span>
+                        <div class="chapter-info">
                             <h3>Developer Insights (le blog)</h3>
                             <p>Le blog officiel de Developer Insights.</p>
                         </div>
-                        <span>En pause</span>
+                        <span class="chapter-status status-paused">En pause</span>
                     </div>
-                    <div>
-                        <span>CH.3</span>
-                        <div>
+                    <div class="chapter-card">
+                        <span class="chapter-id">CH.3</span>
+                        <div class="chapter-info">
                             <h3>À venir</h3>
                             <p>Le prochain arc n'est pas encore loggé.</p>
                         </div>
-                        <span>Bientôt</span>
+                        <span class="chapter-status status-soon">Bientôt</span>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="logs">
-            <span>// Logs</span>
-            <h2>Journal de bord</h2>
+        <section id="logs" class="content-section logs">
+            <span class="section-label">// Logs</span>
+            <h2 class="section-title">Journal de bord</h2>
             <p>Chronologique, brut, sans filtre. Le format que tu connais déjà — mais archivé ici pour de bon.</p>
-            <div>
-                <article>
-                    <div>
+            <div class="logs-list">
+                <article class="log-entry">
+                    <div class="log-meta">
+                        <span>LOG #4 — Developer Insights (le site)</span>
+                        <span>Kinshasa, RDC</span>
+                        <span>Le CSS, ou comment faire parler un logo</span>
+                    </div>
+                    <h3>Le CSS n'est pas "rendre joli après coup"</h3>
+                    <div class="log-body">
+                        <p>J'avais mon logo. J'avais mon HTML tout nu, sans une seule couleur. Et je me suis posé la question que je me pose jamais assez tôt : c'est quoi le logo qui essaie de me dire, en fait ?</p><br>
+                        <p>Deux chevrons de code — &lt; et &gt; — avec une flèche qui monte à travers des barres de croissance. Traduction simple : le code comme moteur de progression. Pas juste "je sais coder", mais "je construis un truc qui grandit". Ça collait exactement à l'esprit du manifeste que j'avais déjà écrit avant même de voir le logo final. Coïncidence ? Non, juste la preuve que le fond et la forme se rejoignent quand c'est cohérent depuis le début.</p><br>
+                        <p>À partir de là, j'ai extrait une palette de 5 couleurs seulement : un fond quasi noir avec une pointe de bleu nuit, et un seul bleu accent — celui du logo. Pas de dégradé arc-en-ciel, pas de deuxième couleur d'appoint. Une seule couleur à défendre, ça oblige à être discipliné. Le twist technique du jour, celui qui m'a fait sourire : au lieu de mettre le logo en image, je l'ai transformé en masque CSS. Concrètement — le logo devient une forme "poinçon", et le navigateur verse la couleur que je veux à travers ce poinçon. Résultat : le jour où je change mon bleu, le logo change avec, automatiquement, sans toucher un seul fichier image. Le style ne décore plus le contenu — il en fait partie.</p><br>
+                        <p>Deux autres trucs découverts en creusant : — la numérotation de mon manifeste (01, 02, 03...) n'existe nulle part dans mon HTML. C'est le CSS qui compte tout seul. — les petites fenêtres "terminal" pour mes chapitres, avec les 3 points en haut à gauche ? Zéro élément ajouté dans le code. Une seule ligne de style qui empile trois points en triangle.</p><br>
+                        <p>La leçon du jour : le CSS c'est pas "rendre joli après coup". C'est traduire une intention en règles. Mon logo disait "progression mesurable" — mon CSS devait le prouver, pas juste l'illustrer. Capture d'écran de la palette + du site 👇 Le prochain log : je branche tout ça sur GitHub Pages. On verra si ça tient debout en vrai. Le CSS n'a jamais été si amusant à faire qu'avec Claude.</p><br>
+                    </div>
+                    <p class="moi log-author">— Michaël, Developer Insights</p><br>
+                    <img class="log-image" src="images/log4palette.png" alt="palette de couleurs du site officiel de Developer Insights, avec le bleu du logo et le bleu nuit du fond."><br>
+                    <img class="log-image" src="images/log4site.png" alt="photo du site officiel de Developer Insights, avec le logo en haut à gauche et les 5 clauses du manifeste en liste numérotée.">
+                </article>
+                <article class="log-entry">
+                    <div class="log-meta">
                         <span>LOG #3 — J'ai recodé le HTML à la main (et c'était pas fun 😅)</span>
                         <span>Kinshasa, RDC</span>
                         <span>Retour à la pratique — Coder sans IA</span>
                     </div>
                     <h3>Ce que j'ai retenu : le HTML qui "marche" n'est pas le HTML qui a du sens</h3>
-                    <div>
-                        <p>Après l'exercice du log #2 — deviner la structure d'un site sans écrire une ligne — je me suis senti prêt à passer à l'action : reprendre tout le HTML du site officiel, moi-même, sans aide.</p>
-                        <p>Première tentative : catastrophe polie. Des divs partout, un h1 collé sur mon logo (alors qu'un h1 c'est censé être LE titre principal de toute la page), et des titres de section planqués dans des span au lieu de vrais h2. Bref, du code qui marche visuellement mais qui ne veut rien dire structurellement.</p>
-                        <p>Le pire bug, sournois celui-là : j'avais écrit id="#manifeste" avec le dièse dans l'id lui-même. Sauf que le # c'est censé être utilisé seulement dans le lien qui pointe vers l'élément, pas dans l'id. Résultat, mon menu de navigation ne menait nulle part. Un caractère, et tout casse.</p>
-                        <p>Deuxième tentative, plus propre : header et nav séparés, un vrai h1 sur la phrase du manifeste, des id sans dièse, et mes 5 clauses du manifeste transformées en vraie liste ol/li parce que — spoiler — le choix de la balise ne limite jamais le design en CSS, ça change juste le sens que ça donne à la page.</p>
-                        <p>Ce que je retiens : le HTML "qui marche" et le HTML "qui a du sens" c'est pas la même chose. Le premier trompe personne à part moi.</p>
+                    <div class="log-body">
+                        <p>Après l'exercice du log #2 — deviner la structure d'un site sans écrire une ligne — je me suis senti prêt à passer à l'action : reprendre tout le HTML du site officiel, moi-même, sans aide.</p><br>
+                        <p>Première tentative : catastrophe polie. Des divs partout, un h1 collé sur mon logo (alors qu'un h1 c'est censé être LE titre principal de toute la page), et des titres de section planqués dans des span au lieu de vrais h2. Bref, du code qui marche visuellement mais qui ne veut rien dire structurellement.</p><br>
+                        <p>Le pire bug, sournois celui-là : j'avais écrit id="#manifeste" avec le dièse dans l'id lui-même. Sauf que le # c'est censé être utilisé seulement dans le lien qui pointe vers l'élément, pas dans l'id. Résultat, mon menu de navigation ne menait nulle part. Un caractère, et tout casse.</p><br>
+                        <p>Deuxième tentative, plus propre : header et nav séparés, un vrai h1 sur la phrase du manifeste, des id sans dièse, et mes 5 clauses du manifeste transformées en vraie liste ol/li parce que — spoiler — le choix de la balise ne limite jamais le design en CSS, ça change juste le sens que ça donne à la page.</p><br>
+                        <p>Ce que je retiens : le HTML "qui marche" et le HTML "qui a du sens" c'est pas la même chose. Le premier trompe personne à part moi.</p><br>
                     </div>
-                    <p class="moi">— Michaël</p><br>
-                    <img src="images/log3.jpg" alt="Capture de la première version du site officiel de Developer Insights, avec le texte '// Manifeste' dans un span au lieu d'un titre de section.">
+                    <p class="moi log-author">— Michaël</p><br>
+                    <img class="log-image" src="images/log3.jpg" alt="Capture de la première version du site officiel de Developer Insights, avec le texte '// Manifeste' dans un span au lieu d'un titre de section.">
                 </article>
-                <article>
-                    <div>
+                <article class="log-entry">
+                    <div class="log-meta">
                         <span>LOG #2 — J'ai appris le HTML sans écrire une seule ligne</span>
                         <span>Kinshasa, RDC</span>
                         <span>Expérience — Apprendre sans taper</span>
                     </div>
                     <h3>Peut-on apprendre le HTML sans écrire une ligne ?</h3>
-                    <div>
-                        <p>Petite expérience bizarre cette semaine : est-ce qu'on peut apprendre les bases du HTML sans coder du tout ? Réponse courte : en partie, oui.</p>
-                        <p>Le principe était simple. On me montrait un bout de HTML tout fait, et je devais deviner à voix haute ce que chaque balise faisait et pourquoi elle était là, avant de vérifier.</p>
-                        <p>Exemple : un article de recette de cuisine. Pourquoi article et pas div ? Parce que ce bloc a du sens tout seul, détaché du reste — on pourrait le partager isolément et ça resterait compréhensible. Pourquoi h2 et pas h1 ? Parce que h1 est réservé au titre principal de toute la page, un seul par page.</p>
-                        <p>Deuxième round : un header avec une nav, une image avec un attribut alt. Là j'ai appris un truc que je savais à moitié — alt sert à décrire l'image pour les lecteurs d'écran ET comme texte de secours si l'image ne charge pas.</p>
-                        <p>Troisième round : un formulaire avec un label lié à un input. Et là, découverte : quand label et input sont bien reliés, cliquer sur le texte du label active directement le champ. Sur mobile, où viser un petit champ à la main est une galère, ce détail change tout.</p>
-                        <p>Ce que ça m'a appris sur moi-même : je reconnais une bonne structure quand je la vois, bien avant de savoir la produire seul. C'est déjà une étape — la suivante, c'est transformer ce réflexe en automatisme quand c'est moi qui pars d'une page blanche.</p>
+                    <div class="log-body">
+                        <p>Petite expérience bizarre cette semaine : est-ce qu'on peut apprendre les bases du HTML sans coder du tout ? Réponse courte : en partie, oui.</p><br>
+                        <p>Le principe était simple. On me montrait un bout de HTML tout fait, et je devais deviner à voix haute ce que chaque balise faisait et pourquoi elle était là, avant de vérifier.</p><br>
+                        <p>Exemple : un article de recette de cuisine. Pourquoi article et pas div ? Parce que ce bloc a du sens tout seul, détaché du reste — on pourrait le partager isolément et ça resterait compréhensible. Pourquoi h2 et pas h1 ? Parce que h1 est réservé au titre principal de toute la page, un seul par page.</p><br>
+                        <p>Deuxième round : un header avec une nav, une image avec un attribut alt. Là j'ai appris un truc que je savais à moitié — alt sert à décrire l'image pour les lecteurs d'écran ET comme texte de secours si l'image ne charge pas.</p><br>
+                        <p>Troisième round : un formulaire avec un label lié à un input. Et là, découverte : quand label et input sont bien reliés, cliquer sur le texte du label active directement le champ. Sur mobile, où viser un petit champ à la main est une galère, ce détail change tout.</p><br>
+                        <p>Ce que ça m'a appris sur moi-même : je reconnais une bonne structure quand je la vois, bien avant de savoir la produire seul. C'est déjà une étape — la suivante, c'est transformer ce réflexe en automatisme quand c'est moi qui pars d'une page blanche.</p><br>
                     </div>
-                    <p class="moi">— Michaël</p><br>
-                    <img src="images/log2.jpeg" alt="Exemple du code d'un article de recette de cuisine">
+                    <p class="moi log-author">— Michaël</p><br>
+                    <img class="log-image" src="images/log2.jpeg" alt="Exemple du code d'un article de recette de cuisine">
                 </article>
-                <article>
-                    <div>
+                <article class="log-entry">
+                    <div class="log-meta">
                         <span>LOG #1 — Le jour où j'ai chopé Claude en flagrant délit 😅</span>
                         <span>Kinshasa, RDC</span>
                         <span>Anecdote et le vrai sujet</span>
                     </div>
                     <h3>Le vrai sujet : pourquoi les bases comptent encore en 2026</h3>
-                    <div>
-                        <p>Petite anecdote avant le vrai sujet. Je suis en train de refaire le HTML du site officiel à la main — no AI, juste moi et mes balises. Je renvoie mon fichier à Claude pour review, il me corrige (à raison), et il me sort une règle du genre : un span ne remplace jamais un titre de section. Sauf que... son propre fichier avait "// Manifeste" dans un span. 👀 Je lui fais remarquer. Et honnêtement, au lieu de sortir une excuse, il a juste dit "bon point, j'aurais dû faire autrement." Pas de "mais en fait techniquement...". Juste une reconnaissance directe.</p>
-                        <p>Ça m'a marqué parce que ça résume où on en est en 2026 : l'IA peut te générer un site entier en 30 secondes, mais si tu connais pas les bases, tu peux même pas repérer quand elle se plante. Moi je l'ai chopé parce que je venais littéralement d'apprendre la règle deux messages plus tôt.</p>
-                        <p>Soyons honnêtes, en 2026, coder tout le HTML et le CSS à la main sur un petit projet perso, c'est de moins en moins réaliste. L'IA le fait plus vite, souvent correctement. Je le vis au quotidien. Mais les bases restent non-négociables. Pas pour le plaisir de souffrir un peu en apprenant, mais parce que :</p>
+                    <div class="log-body">
+                        <p>Petite anecdote avant le vrai sujet. Je suis en train de refaire le HTML du site officiel à la main — no AI, juste moi et mes balises. Je renvoie mon fichier à Claude pour review, il me corrige (à raison), et il me sort une règle du genre : un span ne remplace jamais un titre de section. Sauf que... son propre fichier avait "// Manifeste" dans un span. 👀 Je lui fais remarquer. Et honnêtement, au lieu de sortir une excuse, il a juste dit "bon point, j'aurais dû faire autrement." Pas de "mais en fait techniquement...". Juste une reconnaissance directe.</p><br>
+                        <p>Ça m'a marqué parce que ça résume où on en est en 2026 : l'IA peut te générer un site entier en 30 secondes, mais si tu connais pas les bases, tu peux même pas repérer quand elle se plante. Moi je l'ai chopé parce que je venais littéralement d'apprendre la règle deux messages plus tôt.</p><br>
+                        <p>Soyons honnêtes, en 2026, coder tout le HTML et le CSS à la main sur un petit projet perso, c'est de moins en moins réaliste. L'IA le fait plus vite, souvent correctement. Je le vis au quotidien. Mais les bases restent non-négociables. Pas pour le plaisir de souffrir un peu en apprenant, mais parce que :</p><br>
                         <ul>
                             <li>Tu peux pas juger un code que tu comprends pas</li>
                             <li>L'IA optimise pour "ça marche", pas pour "c'est propre", sans base tu le vois jamais</li>
                             <li>Le jour où tu dois déboguer ou comprendre ce qui se passe sous le capot, la vitesse de l'IA te sauve plus</li>
                         </ul>
-                        <p>Le vrai skill en 2026, c'est pas "je sais taper chaque ligne à la main". C'est "je sais juger chaque ligne qu'on me donne." La suite : on continue à documenter chaque étape, un log à la fois.</p>
+                        <p>Le vrai skill en 2026, c'est pas "je sais taper chaque ligne à la main". C'est "je sais juger chaque ligne qu'on me donne." La suite : on continue à documenter chaque étape, un log à la fois.</p><br>
                     </div>
-                    <p class="moi">— Michaël</p><br>
-                    <img src="images/log1.jpg" alt="Capture de la première version du site officiel de Developer Insights, avec le texte '// Manifeste' dans un span au lieu d'un titre de section.">
+                    <p class="moi log-author">— Michaël</p><br>
+                    <img class="log-image" src="images/log1.jpg" alt="Capture de la première version du site officiel de Developer Insights, avec le texte '// Manifeste' dans un span au lieu d'un titre de section.">
                 </article>
-                <article>
-                    <div>
+                <article class="log-entry">
+                    <div class="log-meta">
                         <span>LOG #0</span>
                         <span>Kinshasa, RDC</span>
                         <span>Chapitre 0 — Genèse</span>
                     </div>
                     <h3>Pourquoi ce journal existe</h3>
-                    <div>
-                        <p>J'ai grandi avec l'idée qu'il fallait choisir : médecin ou artiste. Aucun des deux n'a collé — pas parce que c'était mauvais, mais parce que ce n'était pas <em>le</em> truc.</p>
-                        <p>Le code, lui, a collé. Pas comme une compétence à cocher sur un CV, mais comme un langage pour construire des choses qui n'existaient pas encore.</p>
-                        <p>Aujourd'hui, je suis étudiant en génie logiciel à Kinshasa, et je construis en continu : Developer Insights (le site), Developer Insights (le blog), et d'autres projets qui ne verront peut-être jamais le jour — tous logués ici, sans filtre.</p>
-                        <p>Developer Insights n'est pas une vitrine. C'est un journal de bord. Je préfère montrer le processus — les bugs, les migrations ratées, les décisions qu'on regrette trois semaines plus tard — plutôt qu'un portfolio poli qui cache tout le reste.</p>
-                        <p>Pourquoi ? Parce que je n'ai jamais vu quelqu'un qui construit depuis Kinshasa raconter ça en direct. Les success stories africaines qu'on nous montre arrivent toujours finies, jamais en cours. Je veux logger le <em>en cours</em>.</p>
-                        <p>Ce log #0, c'est le point de départ. Tout ce qui suit — chapitres, logs, victoires, abandons — part d'ici.</p>
+                    <div class="log-body">
+                        <p>J'ai grandi avec l'idée qu'il fallait choisir : médecin ou artiste. Aucun des deux n'a collé — pas parce que c'était mauvais, mais parce que ce n'était pas <em>le</em> truc.</p><br>
+                        <p>Le code, lui, a collé. Pas comme une compétence à cocher sur un CV, mais comme un langage pour construire des choses qui n'existaient pas encore.</p><br>
+                        <p>Aujourd'hui, je suis étudiant en génie logiciel à Kinshasa, et je construis en continu : Developer Insights (le site), Developer Insights (le blog), et d'autres projets qui ne verront peut-être jamais le jour — tous logués ici, sans filtre.</p><br>
+                        <p>Developer Insights n'est pas une vitrine. C'est un journal de bord. Je préfère montrer le processus — les bugs, les migrations ratées, les décisions qu'on regrette trois semaines plus tard — plutôt qu'un portfolio poli qui cache tout le reste.</p><br>
+                        <p>Pourquoi ? Parce que je n'ai jamais vu quelqu'un qui construit depuis Kinshasa raconter ça en direct. Les success stories africaines qu'on nous montre arrivent toujours finies, jamais en cours. Je veux logger le <em>en cours</em>.</p><br>
+                        <p>Ce log #0, c'est le point de départ. Tout ce qui suit — chapitres, logs, victoires, abandons — part d'ici.</p><br>
                     </div>
-                    <p class="moi">— Michaël</p>
+                    <p class="moi log-author">— Michaël</p>
                 </article>
+            </div>
+            <div class="pagination-controls" aria-label="Pagination des logs">
+                <button class="pagination-button prev" type="button" disabled>Précédent</button>
+                <div class="pagination-pages" aria-live="polite"></div>
+                <button class="pagination-button next" type="button">Suivant</button>
             </div>
         </section>
     </main>
-    <footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const logs = Array.from(document.querySelectorAll('.logs-list .log-entry'));
+            const prevButton = document.querySelector('.pagination-button.prev');
+            const nextButton = document.querySelector('.pagination-button.next');
+            const pagesContainer = document.querySelector('.pagination-pages');
+            const pageSize = 2;
+            let currentPage = 1;
+            const pageCount = Math.ceil(logs.length / pageSize);
+
+            function renderPage(page) {
+                currentPage = page;
+                const start = (page - 1) * pageSize;
+                const end = start + pageSize;
+
+                logs.forEach((log, index) => {
+                    log.style.display = index >= start && index < end ? '' : 'none';
+                });
+
+                prevButton.disabled = page === 1;
+                nextButton.disabled = page === pageCount;
+                pagesContainer.textContent = `Page ${page} / ${pageCount}`;
+            }
+
+            prevButton.addEventListener('click', function () {
+                if (currentPage > 1) {
+                    renderPage(currentPage - 1);
+                }
+            });
+
+            nextButton.addEventListener('click', function () {
+                if (currentPage < pageCount) {
+                    renderPage(currentPage + 1);
+                }
+            });
+
+            renderPage(1);
+        });
+    </script>
+    <footer class="site-footer">
         <svg class="signal-divider" viewBox="0 0 400 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M10 45 C 90 45, 150 45, 220 20" stroke="#2f7dff" stroke-width="2" stroke-linecap="round"/>
             <path d="M208 12 L226 18 L216 34" stroke="#2f7dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -173,11 +235,11 @@
         </svg>
         <h3>Suis la suite en direct</h3>
         <p>Nouveaux logs, chapitres et coulisses — sur la page Facebook et la chaîne WhatsApp.</p>
-        <div class="btn-réseaux">
-            <a href="https://www.facebook.com/share/1DD4UwoVir/" class="réseaux">Suivre sur Facebook</a>
-            <a href="https://whatsapp.com/channel/0029Vb8WEbV0wajo8AOUm30p" class="réseaux">Rejoindre le WhatsApp</a>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1DD4UwoVir/" class="social-link">Suivre sur Facebook</a>
+            <a href="https://whatsapp.com/channel/0029Vb8WEbV0wajo8AOUm30p" class="social-link">Rejoindre le WhatsApp</a>
         </div>
-        <p>&copy; Developer Insights — build in public, depuis Kinshasa.</p>
+        <p class="footer-note">&copy; Developer Insights — build in public, depuis Kinshasa.</p>
     </footer>
 </body>
 </html>
