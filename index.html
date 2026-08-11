@@ -89,6 +89,24 @@
             <div class="logs-list">
                 <article class="log-entry">
                     <div class="log-meta">
+                        <span>LOG #5 — Developer Insights (le site)</span>
+                        <span>Kinshasa, RDC</span>
+                        <span>Mon premier déploiement, ou l'art de se débrouiller sans tout comprendre</span>
+                    </div>
+                    <h3>Un raccourci qui fonctionne aujourd'hui se paie plus tard</h3>
+                    <div class="log-body">
+                        <p>Petite confession : mon tout premier push sur GitHub, je l'ai fait sur une branche appelée master. Pas main, celle que tout le monde utilise aujourd'hui. Pourquoi ? Parce que c'est le nom par défaut dans VS Code, et que je n'avais aucune idée qu'il fallait s'en soucier.</p><br>
+                        <p>Résultat : je bloquais sur comment gérer cette histoire de branches. Alors j'ai fait ce que beaucoup de devs débutants font sans le dire — j'ai contourné le problème. Direct sur l'interface web de GitHub, bouton "Upload files", je glisse mon index.html, je commit, et voilà. Le site est en ligne.</p><br>
+                        <p>Ça a marché. Le site tourne, l'URL est propre (bongondamichael.github.io), tout fonctionne. Mais ce raccourci a un coût que je découvre maintenant : pas de git clone en local, donc pas de flux normal pour modifier le site plus tard. Chaque petit changement voudrait dire re-télécharger le fichier, l'éditer, et re-uploader à la main. Ça marche, mais ça ne scale pas.</p><br>
+                        <p>La leçon, et c'est celle-là qui compte : un raccourci qui fonctionne aujourd'hui n'est pas gratuit. Il se paie plus tard, en friction. Ce n'est pas grave d'avoir bricolé pour lancer vite — c'est même souvent la bonne décision au bon moment. Mais il faut savoir revenir dessus une fois que le bricolage commence à coûter plus cher que la solution propre.</p><br>
+                        <p>Ce que je fais maintenant : je clone le repo en local pour retrouver un vrai flux git add / commit / push. Plus besoin de repasser par l'upload web à chaque modification.</p><br>
+                        <p>Prochain log : on attaque enfin le CSS — comment un logo devient une palette, une police, et quelques lignes de code qui font tenir tout le site debout.</p><br>
+                    </div>
+                    <p class="moi log-author">— Michaël, Developer Insights</p><br>
+                    <img class="log-image" src="images/log5.png" alt="Capture d'écran d'une erreur de GitHub indiquant le rejet d'un push sur la branche main.">
+                </article>
+                <article class="log-entry">
+                    <div class="log-meta">
                         <span>LOG #4 — Developer Insights (le site)</span>
                         <span>Kinshasa, RDC</span>
                         <span>Le CSS, ou comment faire parler un logo</span>
@@ -186,45 +204,7 @@
             </div>
         </section>
     </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const logs = Array.from(document.querySelectorAll('.logs-list .log-entry'));
-            const prevButton = document.querySelector('.pagination-button.prev');
-            const nextButton = document.querySelector('.pagination-button.next');
-            const pagesContainer = document.querySelector('.pagination-pages');
-            const pageSize = 2;
-            let currentPage = 1;
-            const pageCount = Math.ceil(logs.length / pageSize);
-
-            function renderPage(page) {
-                currentPage = page;
-                const start = (page - 1) * pageSize;
-                const end = start + pageSize;
-
-                logs.forEach((log, index) => {
-                    log.style.display = index >= start && index < end ? '' : 'none';
-                });
-
-                prevButton.disabled = page === 1;
-                nextButton.disabled = page === pageCount;
-                pagesContainer.textContent = `Page ${page} / ${pageCount}`;
-            }
-
-            prevButton.addEventListener('click', function () {
-                if (currentPage > 1) {
-                    renderPage(currentPage - 1);
-                }
-            });
-
-            nextButton.addEventListener('click', function () {
-                if (currentPage < pageCount) {
-                    renderPage(currentPage + 1);
-                }
-            });
-
-            renderPage(1);
-        });
-    </script>
+    <script src="static/script.js"></script>
     <footer class="site-footer">
         <svg class="signal-divider" viewBox="0 0 400 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M10 45 C 90 45, 150 45, 220 20" stroke="#2f7dff" stroke-width="2" stroke-linecap="round"/>
