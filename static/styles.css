@@ -453,6 +453,11 @@ main {
     border-radius: 8px;
 }
 
+.log-image-tall {
+    max-height: 70vh;
+    object-fit: contain;
+}
+
 .pagination-controls {
     display: flex;
     flex-wrap: wrap;
