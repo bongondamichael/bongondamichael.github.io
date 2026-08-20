@@ -211,7 +211,7 @@ main {
 
 .chapter-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
 }
 
@@ -270,6 +270,15 @@ main {
     margin: 0;
 }
 
+.chapter-logs {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--blue-bright);
+}
+
 .chapter-status {
     display: inline-flex;
     align-items: center;
@@ -316,6 +325,15 @@ main {
 
 .status-paused::before {
     background: #f2b263;
+}
+
+.status-finished {
+    color: #70d6a0;
+    border-color: rgba(112, 214, 160, 0.35);
+}
+
+.status-finished::before {
+    background: #70d6a0;
 }
 
 .status-soon {
@@ -597,6 +615,10 @@ main {
     .content-section {
         padding: 64px 0;
         scroll-margin-top: 76px;
+    }
+
+    .chapter-grid {
+        grid-template-columns: 1fr;
     }
 
     .social-links {

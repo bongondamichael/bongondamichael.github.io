@@ -53,6 +53,7 @@
                         <div class="chapter-info">
                             <h3>Genèse</h3>
                             <p>Le point de départ — pourquoi Developer Insights existe.</p>
+                            <small class="chapter-logs">LOG #0</small>
                         </div>
                         <span class="chapter-status status-neutral">Log fondateur</span>
                     </div>
@@ -61,22 +62,25 @@
                         <div class="chapter-info">
                             <h3>Developer Insights (le site)</h3>
                             <p>Le Journal de bord officiel de Developer Insights.</p>
+                            <small class="chapter-logs">LOG #1 - #9</small>
                         </div>
-                        <span class="chapter-status status-live">En cours</span>
+                        <span class="chapter-status status-finished">Terminé</span>
                     </div>
                     <div class="chapter-card">
                         <span class="chapter-id">CH.2</span>
                         <div class="chapter-info">
-                            <h3>Developer Insights (le blog)</h3>
-                            <p>Le blog officiel de Developer Insights.</p>
+                            <h3>Zeste de Python</h3>
+                            <p>Apprendre à programmer en Python.</p>
+                            <small class="chapter-logs">Indéterminé</small>
                         </div>
-                        <span class="chapter-status status-paused">En pause</span>
+                        <span class="chapter-status status-live">En cours</span>
                     </div>
                     <div class="chapter-card">
                         <span class="chapter-id">CH.3</span>
                         <div class="chapter-info">
                             <h3>À venir</h3>
                             <p>Le prochain arc n'est pas encore loggé.</p>
+                            <small class="chapter-logs">Indéterminé</small>
                         </div>
                         <span class="chapter-status status-soon">Bientôt</span>
                     </div>
@@ -88,6 +92,74 @@
             <h2 class="section-title">Journal de bord</h2>
             <p>Chronologique, brut, sans filtre. Le format que tu connais déjà — mais archivé ici pour de bon.</p>
             <div class="logs-list">
+                <article class="log-entry">
+                    <div class="log-meta">
+                        <span>LOG #9 — Developer Insights (le site)</span>
+                        <span>Kinshasa, RDC</span>
+                        <span>Première fois avec Copilot — Responsive + pagination sans backend</span>
+                    </div>
+                    <h3>Le frontend est un outil, pas une direction</h3>
+                    <div class="log-body">
+                        <p>Première fois que j'utilisais GitHub Copilot. D'habitude je le trouve énervant — toujours à mettre du rouge avant même que j'aie fini de déclarer ma variable. Copilot, lui, est plutôt silencieux. Ça, j'aime bien. Au fond, je ne demande de l'aide à l'IA que sur deux terrains : l'UI, et la robustesse — une fois qu'un truc est déjà fini.</p><br>
+                        <p>Premier chantier : refaire le modèle CSS en classes propres, sans rien casser. Est-ce que j'ai fait confiance au premier coup ? Jamais. Ctrl+Z était prêt avant même de cliquer sur "conserver" — il l'est encore maintenant, d'ailleurs. Je sais lire le CSS et le JS, l'inspiration ne me vient juste pas facilement dans cette langue-là. La preuve : le style des images du LOG #4, c'est moi qui l'ai fait à la main — et je savais qu'il manquait un gap entre les deux avant même de les voir affichées.</p><br>
+                        <p>Deuxième chantier : le responsive tablette, un angle mort que j'avais pas vu venir. Ça m'a appris un truc simple : on peut cibler une audience précise sans jamais oublier le reste du monde.</p><br>
+                        <p>Justement — quand Copilot a proposé d'aller plus loin, jusqu'au grand écran (>1024px), j'ai dit stop. Pas par flemme. Dire non à une IA, c'est facile — sinon je serais éparpillé dans tous les sens. Mon audience est à Kinshasa, sur mobile. Je connais personne capable d'allumer sa télé pour visiter un site statique... à moins de vivre seul. 😅</p><br>
+                        <p>Dernier chantier : la pagination sans backend. Rien de nouveau pour moi côté logique — j'avais déjà fait de la pagination avec Flask. Ici, fallait juste la refaire côté front, sans serveur.</p><br>
+                        <p>La vraie leçon du jour, elle est pas technique : le frontend, c'est un outil, pas une direction. J'ai vu des gens compter des pixels à la main pendant des heures, quand d'autres s'entraînent à réinventer un algorithme pour trouver le plus grand nombre d'une liste — alors qu'une fonction native comme max() fait déjà le travail. Le vrai skill, c'est de savoir où mettre son énergie.</p><br>
+                    </div>
+                    <p class="log-author">— Michaël</p>
+                </article>
+                <article class="log-entry">
+                    <div class="log-meta">
+                        <span>LOG #8 — Developer Insights (le site)</span>
+                        <span>Kinshasa, RDC</span>
+                        <span>Le bug qui refusait de mourir</span>
+                    </div>
+                    <h3>Un bug peut traîner parce que personne n'a vérifié le correctif</h3>
+                    <div class="log-body">
+                        <p>Le header cassé sur mobile, je pensais l'avoir réglé. Sauf qu'à 4h du matin, toujours là, identique — logo en haut, menu écrasé en dessous sur deux lignes. Screenshot à l'appui pour être sûr de pas encore me tromper.</p><br>
+                        <p>En reprenant le fichier ligne par ligne, la vraie cause : le correctif discuté plus tôt n'avait jamais été appliqué pour de vrai. L'ancien bloc CSS mobile était resté tel quel, avec flex-direction: column qui forçait le logo et le menu à s'empiler. Un bug qui traîne pas parce qu'il est compliqué, mais parce que personne n'avait vérifié que le correctif était vraiment collé au bon endroit.</p><br>
+                        <p>La vraie correction : garder le header en une seule ligne (flex-direction reste horizontal), et si le menu ne tient pas sur l'écran, le rendre défilable au doigt horizontalement plutôt que de le laisser retourner à la ligne :</p><br>
+                        <p>nav ul {<br>    flex-wrap: nowrap;<br>    overflow-x: auto;<br>}</p><br>
+                        <p>Résultat : header compact, une seule ligne, menu scrollable si besoin. Le genre de bug qui n'a rien de "difficile" techniquement, mais qui apprend une leçon plus importante que le CSS lui-même : vérifier qu'un correctif est vraiment en place avant de le déclarer réglé.</p><br>
+                        <p>Victoire méritée, à 4h du matin, avec un père qui a validé le site avant même que je le sache complètement stable.</p><br>
+                    </div>
+                    <p class="log-author">— Michaël, Developer Insights</p>
+                </article>
+                <article class="log-entry">
+                    <div class="log-meta">
+                        <span>LOG #7 — Developer Insights (le site)</span>
+                        <span>Kinshasa, RDC</span>
+                        <span>Le bug que même GitHub Copilot a repéré</span>
+                    </div>
+                    <h3>Je ne peux pas juger un bug que je ne comprends pas</h3>
+                    <div class="log-body">
+                        <p>Petit avertissement de Copilot en éditant mon CSS : backdrop-filter is not supported by Safari. Add '-webkit-backdrop-filter'. Traduction : l'effet de flou derrière mon header (celui qui rend le fond légèrement translucide quand on scroll) ne marchait tout simplement pas sur Safari — donc pas sur iPhone, pas sur Mac. Une bonne partie de mon audience potentielle, invisible pour ce détail.</p><br>
+                        <p>La raison, en simple : certaines propriétés CSS sont sorties depuis des années, mais chaque navigateur les a adoptées à son propre rythme. Pendant longtemps, il fallait écrire une version "spéciale Safari" en plus de la version normale, avec un préfixe -webkit- devant. Le navigateur lit les deux lignes et prend celle qu'il comprend.</p><br>
+                        <p>La correction : deux lignes au lieu d'une.</p><br>
+                        <p>-webkit-backdrop-filter: blur(10px);<br>backdrop-filter: blur(10px);</p><br>
+                        <p>Rien de cassé, juste une ligne ajoutée. Mais ce moment-là m'a clairement rappelé un truc : je peux pas juger un bug que je comprends pas. Sans savoir ce qu'est un préfixe navigateur, j'aurais halluciné une catastrophe pour un ajout de deux lignes sans risque.</p><br>
+                    </div>
+                    <p class="log-author">— Michaël, Developer Insights</p><br>
+                    <img class="log-image" src="images/log7.jpg" alt="Capture d'écran du site officiel de Developer Insights sur Safari, avec le header flou et le menu de navigation en dessous.">
+                </article>
+                <article class="log-entry">
+                    <div class="log-meta">
+                        <span>LOG #6 — Developer Insights (le site)</span>
+                        <span>Kinshasa, RDC</span>
+                        <span>Le responsive, round 1 : quand le menu bouffe l'écran</span>
+                    </div>
+                    <h3>Le responsive n'est pas une option qu'on coche à la fin</h3>
+                    <div class="log-body">
+                        <p>Premier vrai test mobile du site, et first hit : mon header (le logo + le menu en haut) passait en deux étages sur téléphone. Logo tout en haut, menu collé en dessous, centré, moche. Résultat : sur un écran déjà petit, le header prenait le tiers de la place avant même d'arriver au contenu.</p><br>
+                        <p>Deuxième souci découvert au même moment : quand je cliquais sur un lien du menu (genre "Manifeste"), la page scrollait bien jusqu'à la section — mais le titre atterrissait pile caché sous le header, qui reste fixe en haut (sticky) même quand on scroll. Le lien "marchait" techniquement, mais visuellement c'était inutilisable.</p><br>
+                        <p>La solution pour le deuxième bug tient en une ligne de CSS : scroll-margin-top. Ça dit au navigateur "arrête-toi X pixels avant la cible", pile la hauteur du header. Simple une fois qu'on sait que ce problème a un nom.</p><br>
+                        <p>Troisième chose réparée dans la foulée : les boutons Facebook/WhatsApp du footer qui se retrouvaient tassés l'un contre l'autre sur petit écran. Solution : les empiler en colonne au lieu de les garder côte à côte quand l'espace manque.</p><br>
+                        <p>Trois bugs, une seule cause commune : du CSS pensé pour grand écran, jamais vraiment testé sur petit écran. La leçon : le responsive c'est pas une option qu'on coche à la fin, c'est un test qu'on fait à chaque étape.</p><br>
+                    </div>
+                    <p class="moi log-author">— Michaël, Developer Insights</p><br>
+                    <img class="log-image" src="images/log6.jpg" alt="Capture d'écran du site officiel de Developer Insights sur mobile, avec le logo en haut et le menu en dessous sur deux lignes.">
+                </article>
                 <article class="log-entry">
                     <div class="log-meta">
                         <span>LOG #5 — Developer Insights (le site)</span>
